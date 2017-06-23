@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('css/search-form.css') }}">
         <script src="{{ asset('js/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/retina.js') }}"></script>
@@ -23,6 +24,7 @@
         <script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
         <script src="{{ asset('js/classie.js') }}"></script>
         <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+        <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
         <title>Laravel</title>
 
     </head>
@@ -39,7 +41,20 @@
                                 <li><a href="">Assets</a></li>
                                 <li><a href="">Blog</a></li>
                                 <li><a href="">Download</a></li>
+                                <li><form onsubmit="submitFn(this, event);">
+                                        <div class="search-wrapper">
+                                            <div class="input-holder">
+                                                <input type="text" class="search-input" placeholder="Type to search" />
+                                                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                                            </div>
+                                            <span class="close" onclick="searchToggle(this, event);"></span>
+                                            <div class="result-container">
+
+                                            </div>
+                                        </div>
+                                    </form></li>
                             </ul>
+
                             <ul class="member-actions" style="top: 26px;">
                                 @if (Auth::check())
                                     <li><a href="{{ url('/home') }}" class="login">Home</a></li>
@@ -409,5 +424,40 @@
             </div>
         </div>
     </footer>
+    @yield('content')
+    <script type="text/javascript">
+        function searchToggle(obj, evt){
+            var container = $(obj).closest('.search-wrapper');
+
+            if(!container.hasClass('active')){
+                container.addClass('active');
+                evt.preventDefault();
+            }
+            else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+                container.removeClass('active');
+                // clear input
+                container.find('.search-input').val('');
+                // clear and hide result container when we press close
+                container.find('.result-container').fadeOut(100, function(){$(this).empty();});
+            }
+        }
+
+        function submitFn(obj, evt){
+            value = $(obj).find('.search-input').val().trim();
+
+            _html = "Yup yup! Your search text sounds like this: ";
+            if(!value.length){
+                _html = "Yup yup! Add some text friend :D";
+            }
+            else{
+                _html += "<b>" + value + "</b>";
+            }
+
+            $(obj).find('.result-container').html('<span>' + _html + '</span>');
+            $(obj).find('.result-container').fadeIn(100);
+
+            evt.preventDefault();
+        }
+    </script>
     </body>
 </html>

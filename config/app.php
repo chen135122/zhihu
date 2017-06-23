@@ -170,6 +170,7 @@ return [
         Naux\Mail\SendCloudServiceProvider::class,
         Overtrue\LaravelUEditor\UEditorServiceProvider::class,
         LaravelChen\Editormd\EditorMdProvider::class,
+        Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
 
         /*
          * Application Service Providers...

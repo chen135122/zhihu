@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.banner');
 });
 
 Auth::routes();
@@ -30,3 +30,8 @@ Route::resource('questions','QuestionsController',['name'=>[
 //});
 Route::post('/question/{question}/answer','AnswersController@store');
 Route::get('/question/{question}/follow','QuestionFollowController@follow');
+Route::get('/captcha', function () {
+    $captcha = new \Laravist\GeeCaptcha\GeeCaptcha(env('CAPTCHA_ID'), env('PRIVATE_KEY'));
+
+    echo $captcha->GTServerIsNormal();
+});
