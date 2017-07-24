@@ -171,6 +171,7 @@ return [
         Overtrue\LaravelUEditor\UEditorServiceProvider::class,
         LaravelChen\Editormd\EditorMdProvider::class,
         Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
+        Germey\Geetest\GeetestServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -230,6 +231,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'SendMail' => Naux\Mail\SendCloudServiceProvider::class,
+        'Geetest' => Germey\Geetest\Geetest::class,
 
     ],
 

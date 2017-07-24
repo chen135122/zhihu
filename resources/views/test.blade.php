@@ -10,9 +10,16 @@
 <body>
 <div class="container">
     <div class="col-md-12" style="margin-top: 50px">
-        <div id="editormd_id">
-            <textarea name="content" style="display:none;"></textarea>
-        </div>
+        <form action="/test" method="post">
+            {!! csrf_field() !!}
+            <div id="editormd_id">
+                <textarea name="content" style="display:none;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+            点击登录
+            </button>
+        </form>
+
     </div>
 </div>
 <script src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>

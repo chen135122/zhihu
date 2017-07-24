@@ -44,3 +44,10 @@ Route::middleware('auth:api')->post('/question/follow', function (Request $reque
 });
 Route::middleware('auth:api')->get('/user/followed/{id}','UserFollowController@index');
 Route::middleware('auth:api')->post('/user/follow','UserFollowController@follow');
+Route::post('/androidRegister','AndroidController@index');
+Route::post('/androidLogin','AndroidController@show');
+Route::get('/androidShow',function (){
+   return json_encode(\App\AndroidUser::all());
+});
+Route::post('/upload','AndroidController@upload');
+Route::get('/showQuestions','AndroidController@questions');

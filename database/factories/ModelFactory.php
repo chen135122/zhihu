@@ -23,11 +23,25 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 $factory->define(App\Topic::class, function (Faker\Generator $faker) {
-    static $password;
 
     return [
         'name' => $faker->word,
         'bio' => $faker->paragraph,
         'questions_count' => 1
+    ];
+});
+$factory->define(App\AndroidUser::class, function (Faker\Generator $faker) {
+
+    return [
+        'email' => $faker->email,
+        'password' => $faker->password
+    ];
+});
+$factory->define(App\Question::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->title,
+        'body' => $faker->paragraph,
+        'User_id' => 9
     ];
 });

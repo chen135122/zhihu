@@ -178,9 +178,21 @@ i{
 }
 .a-ul{
     margin-top: 50px;
+    margin-left: 0;
+    width: 100%;
 }
 .a-li{
     width:100%;
     line-height: 25px;
-    margin-left: 0;
+    margin-left:0;
+    text-align: center;
+}
+.community-add{
+    position: relative;
+    top:50%;
+    width: 100%;
+    color: #00ffff;
+    height:120px;
+    padding-top:-30px;
+    display:inline-table;
 }

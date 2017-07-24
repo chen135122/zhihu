@@ -25,7 +25,8 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-        return 'index';
+        $questions = Question::paginate(5);
+        return view('community.community',compact('questions'));
     }
 
     /**

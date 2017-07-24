@@ -51,4 +51,7 @@ class User extends Authenticatable
     public function followThisUser($user){
         return $this->followers()->toggle($user);
     }
+    public function questions(){
+        return $this->hasMany(Question::class);
+    }
 }

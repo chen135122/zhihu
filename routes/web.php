@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home.banner');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -25,13 +25,29 @@ Route::resource('questions','QuestionsController',['name'=>[
 ]]);
 //Route::get('/github','LoginController@login');
 //Route::get('/login','LoginController@githubLogin');
-//Route::get('/mk',function (){
-//    return view('test');
-//});
+Route::get('/mk',function (){
+    return view('test');
+});
 Route::post('/question/{question}/answer','AnswersController@store');
 Route::get('/question/{question}/follow','QuestionFollowController@follow');
 Route::get('/captcha', function () {
     $captcha = new \Laravist\GeeCaptcha\GeeCaptcha(env('CAPTCHA_ID'), env('PRIVATE_KEY'));
-
     echo $captcha->GTServerIsNormal();
+});
+Route::post('/verify', function () {
+    $captcha = new \Laravist\GeeCaptcha\GeeCaptcha(env('CAPTCHA_ID'), env('PRIVATE_KEY'));
+    if ($captcha->isFromGTServer()) {
+        if($captcha->success()){
+            return 'success';
+        }
+        return 'no';
+    }
+    if ($captcha->hasAnswer()) {
+        return "answer";
+    }
+    return "no answer";
+});
+Route::get('/community','CommunityController@index');
+Route::post('/test',function (\Illuminate\Http\Request $request){
+    echo '<pre>'.$request->get('content').'</pre>';
 });
