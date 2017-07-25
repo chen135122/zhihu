@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('home.banner');
 });
 
 Auth::routes();
@@ -24,7 +24,7 @@ Route::resource('questions','QuestionsController',['name'=>[
         'show' => 'question.show',
 ]]);
 //Route::get('/github','LoginController@login');
-//Route::get('/login','LoginController@githubLogin');
+//Route::post('/login','LoginController@githubLogin');
 Route::get('/mk',function (){
     return view('test');
 });
