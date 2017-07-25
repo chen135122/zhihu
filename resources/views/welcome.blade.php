@@ -25,6 +25,7 @@
         <script src="{{ asset('js/classie.js') }}"></script>
         <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
         <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('public/img/pexels-photo-463684.ico') }}" media="screen" />
         <title>Laravel</title>
 
     </head>

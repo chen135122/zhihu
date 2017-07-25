@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
-    <link rel="shortcut icon" href="{{ asset('img/poorworm.ico') }}"/>
+    <link rel="shortcut icon" href="{{ asset('img/pexels-photo-463684.ico') }}"/>
     <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
