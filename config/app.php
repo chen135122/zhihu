@@ -172,7 +172,8 @@ return [
         LaravelChen\Editormd\EditorMdProvider::class,
         Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
         Germey\Geetest\GeetestServiceProvider::class,
-
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Bican\Roles\RolesServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -232,7 +233,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'SendMail' => Naux\Mail\SendCloudServiceProvider::class,
         'Geetest' => Germey\Geetest\Geetest::class,
-
     ],
 
 ];

@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
+
     <link rel="shortcut icon" href="{{ asset('img/pexels-photo-463684.ico') }}"/>
     <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="api-token" content="{{ Auth::check() ? 'Bearer '.Auth::user()->api_token : 'Bearer ' }}">
     <script src="http://api.geetest.com/get.php"></script>
+    {!! editor_css() !!}
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mine.css') }}" rel="stylesheet">
     <title>PoorWorm</title>
 </head>
 <body>
@@ -31,9 +35,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="show"><i class="fa fa-home" aria-hidden="true"></i><span>首页</span></a></li>
+                <li><a href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i><span>首页</span></a></li>
                 <li><a href="{{ url('questions') }}"><i class="fa fa-video-camera" aria-hidden="true"></i><span>社区</span></a></li>
-                <li><a href="/novel"><i class="fa fa-book" aria-hidden="true"></i><span>博文</span></a></li>
+                <li><a href="{{ route('articleAll') }}"><i class="fa fa-book" aria-hidden="true"></i><span>博文</span></a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -47,10 +51,13 @@
                 <li style="margin-left:0"><a href="{{ route('register') }}"><span>注册</span></a></li>
                 @else
                     <li><i class="fa fa-bell" aria-hidden="true"></i></li>
-                    <li><img width="36" style="border-radius:50% " src="{{ asset('images/avatars/a35.jpg') }}" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <li><img width="36" style="border-radius:50% " src="{{ asset('img/default_avatar.jpg') }}" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>个人信息</a></li>
+                            <li><a href="{{ url('person/information') }}"><i class="fa fa-user" aria-hidden="true"></i>个人信息</a></li>
                             <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>收藏列表</a></li>
+                            @role('admin')
+                            <li><a href="{{ route('back') }}"><i class="fa fa-heart" aria-hidden="true"></i>后台首页</a></li>
+                            @endrole
                             <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i>修改密码</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();

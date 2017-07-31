@@ -42,6 +42,16 @@ $factory->define(App\Question::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->title,
         'body' => $faker->paragraph,
-        'User_id' => 9
+        'User_id' => 1
+    ];
+});
+$factory->define(App\Article::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'author' => $faker->name,
+        'cover_img'=> $faker->imageUrl(),
+        'intro' => $faker->sentence,
+        'body' => $faker->paragraph,
+        'type' => 3
     ];
 });

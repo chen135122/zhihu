@@ -27,8 +27,6 @@
         <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('public/img/pexels-photo-463684.ico') }}" media="screen" />
         <title>Laravel</title>
-
-    </head>
     <body id="top">
     <section class="hero">
         <section class="navigation fixed">

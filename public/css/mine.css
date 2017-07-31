@@ -1,0 +1,13 @@
+.article-img{
+    border: 1px solid #d0d0d0;
+    padding: 8px;
+    overflow: hidden;
+}
+.article-img:hover{
+    box-shadow: 0 0 35px #000;
+    transition: 1s;
+}
+.article-img > img:hover{
+    transform:scale(1.2);
+    transition: 1s;
+}

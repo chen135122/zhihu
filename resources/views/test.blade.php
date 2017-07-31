@@ -5,24 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    {!! editor_css() !!}
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link href="{{ asset('css/app.css') }}">
 </head>
 <body>
-<div class="container">
-    <div class="col-md-12" style="margin-top: 50px">
-        <form action="/test" method="post">
-            {!! csrf_field() !!}
-            <div id="editormd_id">
-                <textarea name="content" style="display:none;"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">
-            点击登录
-            </button>
-        </form>
-
-    </div>
-</div>
-<script src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
-{!! editor_js() !!}
+ <div id="app">
+     <example></example>
+ </div>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

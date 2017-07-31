@@ -1,7 +1,7 @@
 @extends('layouts.header')
 @section('content')
     <div class="container-fluid" style="padding: 0">
-            <div style="background-color:#393e46;height: 300px;width: 100%;padding:0;text-align: center;">
+            <div style="background:#393e46;height: 300px;width: 100%;padding:0;text-align: center;">
                 <div class="community-add">
                     <a href="{{ url('questions/create') }}"><button style="width: 250px;height: 60px;font-size: 28px" class="btn btn-info btn-large">发布新帖子</button></a>
                 </div>
@@ -14,13 +14,16 @@
     </div>
     <div class="container">
         @foreach($questions as $question)
+
+
+
             <div class="row clearfix" style="margin-top: 30px">
                 <div class="col-md-6 col-md-offset-2">
                     <div class="media">
-                        <a href="#" class="pull-left"><img width="28px" src="{!! $question->user->avatar !!}" class="media-object" alt='' /></a>
+                        <a href="#" class="pull-left"><img width="28px" src="{{ asset('img/default_avatar.jpg') }}" class="media-object" alt='' /></a>
                         <div class="media-body">
                             <h4 class="media-heading">
-                               {{ $question->title }}
+                                <a href="{{ url('/questions/'.$question->id) }}">{{ $question->title }}</a>
                             </h4><span style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">{{ $question->body }}</span>
                         </div>
                     </div>
@@ -37,5 +40,8 @@
             </div>
         @endforeach
     </div>
-    {{ $questions->links() }}
+    <div style="text-align: center;margin-top:100px;">
+        {{ $questions->links() }}
+    </div>
+
 @stop

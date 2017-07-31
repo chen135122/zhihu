@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Bican\Roles\Models\Role;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use Naux\Mail\SendCloudTemplate;
@@ -30,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -73,9 +74,13 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'api_token' => str_random(60),
         ]);
-        $this->sendVerifyEmailTo($user);
+        $role = Role::find(3);
+        $user->attachRole($role);
+//        $this->sendVerifyEmailTo($user);
         return $user;
     }
+
+
     public function sendVerifyEmailTo($user){
         // 模板变量
         $data = [

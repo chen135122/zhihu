@@ -2,13 +2,16 @@
 
 namespace App;
 
+use Bican\Roles\Models\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Bican\Roles\Traits\HasRoleAndPermission;
+use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasRoleAndPermissionContract
 {
-    use Notifiable;
+    use Notifiable,HasRoleAndPermission;
 
     /**
      * The attributes that are mass assignable.
@@ -30,12 +33,19 @@ class User extends Authenticatable
     public function owns(Model $model){
         return $this->id == $model->user_id;
     }
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
+    public function roles(){
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
     public function answers(){
-        return $this->hasMany(Answer::class);
+        return $this->belongsToMany(Answer::class);
     }
     public function follows(){
         return $this->belongsToMany(Question::class,'user_question')->withTimestamps();
     }
+
     public function followThis($questionId){
         return $this->follows()->toggle($questionId);
     }

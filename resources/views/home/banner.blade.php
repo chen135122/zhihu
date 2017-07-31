@@ -29,6 +29,31 @@
             <li><a>2</a></li>
         </ol>
     </div>
+    <div class="container">
+        <div class="row clearfix" style="margin-top: 30px">
+            <div class="col-md-12 column">
+                <div style="text-align: center;font-size: 30px">
+                    博文分类
+                </div>
+                <hr>
+                @foreach($data as $list)
+                    <a href="{{ url('/article/type/'.$list->id) }}">
+                        <div class="col-md-4 column">
+                            <div class="article-img">
+                                <img class="img-responsive" style="width:100%;min-width: 300px;height: 200px" src="{{ $list->img }}" />
+                                <h3>
+                                    {{ $list->name }}
+                                </h3>
+                                <p style="line-height: 20px;height: 60px;overflow: hidden;text-overflow:ellipsis;overflow : hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+                                    {{ $list->intro }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    @endforeach
+            </div>
+        </div>
+    </div>
     <script src="{{ asset('js/slider.js') }}"></script>
     <script type="text/javascript">
         $(function() {
