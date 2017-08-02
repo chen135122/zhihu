@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ad3d182f2828c973a3b6f02b3960872",
+    "content-hash": "d696a0a67e5b523f93481e270f6b1ddc",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -216,6 +216,74 @@
             "time": "2017-06-09T08:16:13+00:00"
         },
         {
+            "name": "christofferok/laravel-emojione",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/christofferok/laravel-emojione.git",
+                "reference": "61521ad00cb39f51616d9af816d1cba12d7a0480"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/christofferok/laravel-emojione/zipball/61521ad00cb39f51616d9af816d1cba12d7a0480",
+                "reference": "61521ad00cb39f51616d9af816d1cba12d7a0480",
+                "shasum": ""
+            },
+            "require": {
+                "emojione/emojione": "^3.1.0",
+                "illuminate/support": "~5.1",
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "suggest": {
+                "emojione/assets": "If you want to serve the emojione assets yourself"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "ChristofferOK\\LaravelEmojiOne\\LaravelEmojiOneServiceProvider"
+                    ],
+                    "alias": {
+                        "LaravelEmojiOne": "ChristofferOK\\LaravelEmojiOne\\LaravelEmojiOneFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ChristofferOK\\LaravelEmojiOne\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": ":Christoffer Korvald",
+                    "email": "korvald@gmail.com",
+                    "homepage": "https://christoffeork.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel helper for EmojiOne",
+            "homepage": "https://github.com/christofferok/LaravelEmojiOne",
+            "keywords": [
+                "ChristofferOK",
+                "LaravelEmojiOne",
+                "emoji",
+                "emojione",
+                "laravel"
+            ],
+            "time": "2017-07-22T12:30:16+00:00"
+        },
+        {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
             "source": {
@@ -314,6 +382,49 @@
                 "string"
             ],
             "time": "2017-07-22T12:18:28+00:00"
+        },
+        {
+            "name": "emojione/emojione",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/emojione/emojione.git",
+                "reference": "4a166f9334809b5044ecf493f7decf47d50e0a8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/emojione/emojione/zipball/4a166f9334809b5044ecf493f7decf47d50e0a8a",
+                "reference": "4a166f9334809b5044ecf493f7decf47d50e0a8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6 || ~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Emojione\\": "lib/php/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(CC-BY-4.0 and MIT)"
+            ],
+            "description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG format provided for the emoji images.",
+            "homepage": "http://www.emojione.com",
+            "keywords": [
+                "emoji",
+                "emojione",
+                "emojis",
+                "emoticons",
+                "smileys",
+                "smilies",
+                "unicode"
+            ],
+            "time": "2017-06-30T17:09:19+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -1201,16 +1312,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "0808939f81c1347a3c8a82a5925385a08074b0f1"
+                "reference": "4d4896e553f2094e657fe493506dc37c509d4e2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0808939f81c1347a3c8a82a5925385a08074b0f1",
-                "reference": "0808939f81c1347a3c8a82a5925385a08074b0f1",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4d4896e553f2094e657fe493506dc37c509d4e2b",
+                "reference": "4d4896e553f2094e657fe493506dc37c509d4e2b",
                 "shasum": ""
             },
             "require": {
@@ -1248,7 +1359,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-06-28T20:53:48+00:00"
+            "time": "2017-07-28T14:45:09+00:00"
         },
         {
             "name": "overtrue/flysystem-qiniu",
@@ -1292,6 +1403,56 @@
             ],
             "description": "Flysystem adapter for the Qiniu storage.",
             "time": "2017-04-02T05:52:45+00:00"
+        },
+        {
+            "name": "overtrue/laravel-emoji",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/laravel-emoji.git",
+                "reference": "feea225f472ab283599086cff9f00017fdf7c042"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/overtrue/laravel-emoji/zipball/feea225f472ab283599086cff9f00017fdf7c042",
+                "reference": "feea225f472ab283599086cff9f00017fdf7c042",
+                "shasum": ""
+            },
+            "require": {
+                "emojione/emojione": "^3.1",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Overtrue\\LaravelEmoji\\EmojiServiceProvider"
+                    ],
+                    "aliases": {
+                        "Emoji": "Overtrue\\LaravelEmoji\\Emoji"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\LaravelEmoji\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "overtrue",
+                    "email": "anzhengchao@gmail.com"
+                }
+            ],
+            "description": "An emojione bridge for Laravel 5.",
+            "time": "2017-07-24T13:00:16+00:00"
         },
         {
             "name": "overtrue/laravel-filesystem-qiniu",
@@ -1423,16 +1584,16 @@
         },
         {
             "name": "overtrue/socialite",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/socialite.git",
-                "reference": "306d6df42e1d0849bbaeb791ec94c6d012b2b615"
+                "reference": "0b943f2b2063c8c4f1672b4d2f4451e57d7415a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/socialite/zipball/306d6df42e1d0849bbaeb791ec94c6d012b2b615",
-                "reference": "306d6df42e1d0849bbaeb791ec94c6d012b2b615",
+                "url": "https://api.github.com/repos/overtrue/socialite/zipball/0b943f2b2063c8c4f1672b4d2f4451e57d7415a7",
+                "reference": "0b943f2b2063c8c4f1672b4d2f4451e57d7415a7",
                 "shasum": ""
             },
             "require": {
@@ -1469,7 +1630,7 @@
                 "wechat",
                 "weibo"
             ],
-            "time": "2017-07-03T00:36:16+00:00"
+            "time": "2017-07-27T08:22:56+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1618,16 +1779,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.10",
+            "version": "v0.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "7ab97e5a32202585309f3ee35a0c08d2a8e588b1"
+                "reference": "b193cd020e8c6b66cea6457826ae005e94e6d2c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7ab97e5a32202585309f3ee35a0c08d2a8e588b1",
-                "reference": "7ab97e5a32202585309f3ee35a0c08d2a8e588b1",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/b193cd020e8c6b66cea6457826ae005e94e6d2c0",
+                "reference": "b193cd020e8c6b66cea6457826ae005e94e6d2c0",
                 "shasum": ""
             },
             "require": {
@@ -1687,7 +1848,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-07-22T15:14:19+00:00"
+            "time": "2017-07-29T19:30:02+00:00"
         },
         {
             "name": "qiniu/php-sdk",
@@ -4253,7 +4414,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "overtrue/laravel-emoji": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

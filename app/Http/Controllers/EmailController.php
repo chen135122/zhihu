@@ -15,6 +15,6 @@ class EmailController extends Controller
         $user->is_confirmed = 1;
         $user->confirmation_token = str_random(40);
         $user->save();
-        return redirect('/home');
+        return redirect('/');
     }
 }

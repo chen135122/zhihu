@@ -174,6 +174,8 @@ return [
         Germey\Geetest\GeetestServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bican\Roles\RolesServiceProvider::class,
+        Overtrue\LaravelEmoji\EmojiServiceProvider::class,
+        ChristofferOK\LaravelEmojiOne\LaravelEmojiOneServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -233,6 +235,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'SendMail' => Naux\Mail\SendCloudServiceProvider::class,
         'Geetest' => Germey\Geetest\Geetest::class,
+        'Emoji' => Overtrue\LaravelEmoji\Emoji::class,
+        'LaravelEmojiOne' => ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade::class,
     ],
 
 ];

@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+
+use ChristofferOK\LaravelEmojiOne\LaravelEmojiOne;
+use ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade;
 use Illuminate\Http\Request;
 
-class PersonController extends Controller
+class TestController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +16,9 @@ class PersonController extends Controller
      */
     public function index()
     {
-        $data = User::where('id',\Auth::id())->first();
-        return view('person.information',compact('data'));
+
+        $data = LaravelEmojiOneFacade::toShort(':smiley:');
+        return view('mark',compact('data'));
     }
 
     /**
@@ -41,28 +39,9 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        User::where('id',\Auth::id())->update(['name'=>$request->get('name')]);
-        return redirect()->route('personInformation');
+        //
     }
 
-    public function showList(){
-        $data = User::all();
-        return view('person.list',compact('data'));
-    }
-
-    public function save(Request $request){
-        $data = $request->get('image');
-        $url = explode(',',$data);
-        $name = md5(time());
-        file_put_contents('./img/avatars/'.$name.'.jpg', base64_decode($url[1]));//返回的是字节数
-        User::where('id',\Auth::id())
-            ->update(['avatar'=> '/img/avatars/'.$name.'.jpg']);
-        $attr = array(
-            'result' => true,
-            'file' => '/img/avatars/'.$name.'.jpg'
-        );
-        return json_encode($attr);
-    }
     /**
      * Display the specified resource.
      *

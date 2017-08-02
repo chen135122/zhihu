@@ -51,7 +51,7 @@
                 <li style="margin-left:0"><a href="{{ route('register') }}"><span>注册</span></a></li>
                 @else
                     <li><i class="fa fa-bell" aria-hidden="true"></i></li>
-                    <li><img width="36" style="border-radius:50% " src="{{ asset('img/default_avatar.jpg') }}" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <li id="img-change"><img width="36" style="border-radius:50% " src="{{ Auth::user()->avatar }}" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="{{ url('person/information') }}"><i class="fa fa-user" aria-hidden="true"></i>个人信息</a></li>
                             <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>收藏列表</a></li>

@@ -18,6 +18,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
     <script src="{{ asset('assets/js/echarts.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
+    {!! editor_css() !!}
 </head>
 
 <body data-type="index">

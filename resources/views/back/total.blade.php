@@ -72,7 +72,7 @@
                             <div class="number"> {{ $data['users'] }} </div>
                             <div class="desc"> 个用户 </div>
                         </div>
-                        <a class="more" href="#"> 查看更多
+                        <a class="more" href="{{ route('personList') }}"> 查看更多
                             <i class="m-icon-swapright m-icon-white"></i>
                         </a>
                     </div>

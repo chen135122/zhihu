@@ -13,6 +13,6 @@ class Article extends Model
         return $this->belongsTo(User::class);
     }
     public  function ArticleType(){
-        return $this->belongsTo(ArticleType::class);
+        return $this->belongsTo(ArticleType::class,'type');
     }
 }

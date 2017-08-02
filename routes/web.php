@@ -36,6 +36,7 @@ Route::get('/community','CommunityController@index');
 Route::post('/test',function (\Illuminate\Http\Request $request){
     echo '<pre>'.$request->get('content').'</pre>';
 });
+Route::get('/mark','TestController@index');
 
 Route::get('/article/create','ArticleController@index');
 Route::post('/article/create','ArticleController@store');
@@ -54,6 +55,7 @@ Route::get('/back/question/list','BackController@questionList')->name('questionL
 Route::get('person/information','PersonController@index')->name('personInformation');
 Route::get('person/list','PersonController@showList')->name('personList')->middleware('auth','role:admin');
 Route::post('person/store','PersonController@store');
+Route::post('person/save','PersonController@save');
 
 
 Route::get('/roles/all','RoleController@index')->name('rolesAll');
