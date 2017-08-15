@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="panel-footer" id="app2">
-                        <user-follow-button :user="{{ $question->user_id }}"></user-follow-button>
+                        <user-follow-button user="{{ $question->user_id }}"></user-follow-button>
                         <button class="btn btn-default pull-right">发送私信</button>
                     </div>
                 </div>

@@ -12,10 +12,9 @@
 */
 
 Route::get('/', function () {
-    $data = \App\ArticleType::all();
-    return view('home.banner',compact('data'));
+    $data = \App\ArticleType::latest()->get();
+    return view('home.blog',compact('data'));
 });
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -27,7 +26,7 @@ Route::resource('questions','QuestionsController',['name'=>[
 //Route::get('/github','LoginController@login');
 //Route::post('/login','LoginController@githubLogin');
 Route::get('/mk',function (){
-    return view('test');
+    return view('home.index');
 });
 Route::post('/question/{question}/answer','AnswersController@store');
 Route::get('/question/{question}/follow','QuestionFollowController@follow');
@@ -37,6 +36,9 @@ Route::post('/test',function (\Illuminate\Http\Request $request){
     echo '<pre>'.$request->get('content').'</pre>';
 });
 Route::get('/mark','TestController@index');
+Route::get('/comment',function(){
+    return view('home.test');
+});
 
 Route::get('/article/create','ArticleController@index');
 Route::post('/article/create','ArticleController@store');
@@ -45,8 +47,8 @@ Route::get('/article/show','ArticleController@showAll')->name('articleAll');
 Route::get('/article/type','ArticleController@type')->name('articleType');
 Route::get('/article/type/add','ArticleController@typeAdd')->name('articleTypeAdd');
 Route::post('/article/type/add','ArticleController@typeAddStore');
-Route::get('/article/type/{id}','ArticleController@typeId');
-Route::get('/article/{id}','ArticleController@showOne');
+Route::get('/article/type/{id}','ArticleController@typeId')->where('id','[0-9]+');
+Route::get('/article/{id}','ArticleController@showOne')->where('id','[0-9]+');
 
 
 Route::get('/back','BackController@index')->name('back');
@@ -61,3 +63,18 @@ Route::post('person/save','PersonController@save');
 Route::get('/roles/all','RoleController@index')->name('rolesAll');
 Route::get('/roles/add','RoleController@showAdd')->name('showAdd');
 Route::post('/roles/add','RoleController@store');
+
+Route::post('/comment','CommentsController@save');
+
+Route::get('/notify',function(){
+    $user = Auth::loginUsingId(5);
+    $user->notify(new \App\Notifications\Test());
+});
+Route::get('/group',function (){
+    $collection = \App\Comment::all()->groupBy('parent_id');
+    $collection['root'] = $collection[''];
+    unset($collection['']);
+    return view('test4',compact('collection'));
+//    return $data;
+});
+

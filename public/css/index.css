@@ -1,3 +1,4 @@
+
 .row{
     margin:0;
 }
@@ -35,7 +36,7 @@
 .nav-header{
     float: left;
     font-size:34px;
-    color:#00ffff;
+    color:#f78e21;
 }
 li{
     float: left;
@@ -48,9 +49,7 @@ li{
 .see{
     color:red;
 }
-.navbar-inverse{
-    background-color:#000;
-}
+
 @media(max-width: 1200px) {
     .navbar-form{
         display: none;

@@ -2,12 +2,40 @@
     border: 1px solid #d0d0d0;
     padding: 8px;
     overflow: hidden;
+    transition:all 1s;
 }
 .article-img:hover{
     box-shadow: 0 0 35px #000;
-    transition: 1s;
+    transition:all 1s;
+}
+.article-img > img{
+    transition:all 1s;
 }
 .article-img > img:hover{
     transform:scale(1.2);
     transition: 1s;
+}
+.navbar-inverse{
+    background-color: #fff;
+    border-color:#f78e21;
+}
+.nav-header{
+    color:#f78e21;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #f78e21;
+}
+.navbar-inverse .navbar-nav>li>a:hover{
+    color: #f78e31;
+    background-color: transparent;
+}
+.blog-post{
+    min-height: 240px;
+}
+textarea {
+    height: 60px!important;
+    max-height: 180px;
+    max-width: 770px;
+    line-height: 18px;
+    width: 100%;
 }

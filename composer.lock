@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d696a0a67e5b523f93481e270f6b1ddc",
+    "content-hash": "115e2a7fc7d318d79e8fc66e48952665",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -382,6 +382,41 @@
                 "string"
             ],
             "time": "2017-07-22T12:18:28+00:00"
+        },
+        {
+            "name": "emojione/assets",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/emojione/emojione-assets.git",
+                "reference": "ef2ad9feb530d13ca722944af1bbe6c1ffc15cd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/emojione/emojione-assets/zipball/ef2ad9feb530d13ca722944af1bbe6c1ffc15cd1",
+                "reference": "ef2ad9feb530d13ca722944af1bbe6c1ffc15cd1",
+                "shasum": ""
+            },
+            "suggest": {
+                "emojione/emojione": "A set of libraries to make using emoji on your websites easier."
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "description": "Emojis in png format brought to you by EmojiOne. EmojiOne is a complete set of emojis designed for the web.",
+            "homepage": "https://www.emojione.com",
+            "keywords": [
+                "emoji",
+                "emojione",
+                "emojis",
+                "emoticons",
+                "smileys",
+                "smilies",
+                "unicode"
+            ],
+            "time": "2017-07-12T17:45:21+00:00"
         },
         {
             "name": "emojione/emojione",
@@ -981,17 +1016,21 @@
         },
         {
             "name": "laravelchen/laravel-editormd",
-            "version": "2.0",
+            "version": "2.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelChen/laravel-editormd.git",
-                "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a"
+                "reference": "b3b25a063bef30f5af8f172ac137cb4bd7d3bca5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelChen/laravel-editormd/zipball/5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a",
-                "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a",
+                "url": "https://api.github.com/repos/LaravelChen/laravel-editormd/zipball/b3b25a063bef30f5af8f172ac137cb4bd7d3bca5",
+                "reference": "b3b25a063bef30f5af8f172ac137cb4bd7d3bca5",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zgldh/qiniu-laravel-storage": "^0.7.0"
             },
             "type": "library",
             "autoload": {
@@ -1013,7 +1052,7 @@
                 }
             ],
             "description": "laravel-editor-mb",
-            "time": "2017-03-25T04:20:03+00:00"
+            "time": "2017-08-03T04:45:44+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2937,6 +2976,58 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "zgldh/qiniu-laravel-storage",
+            "version": "v0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zgldh/qiniu-laravel-storage.git",
+                "reference": "1651af398c46e994df4179cfa41bf80cb025e7e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zgldh/qiniu-laravel-storage/zipball/1651af398c46e994df4179cfa41bf80cb025e7e0",
+                "reference": "1651af398c46e994df4179cfa41bf80cb025e7e0",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "^1.0",
+                "php": ">=5.3.3",
+                "qiniu/php-sdk": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "zgldh\\QiniuStorage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "zgldh",
+                    "email": "zgldh@hotmail.com",
+                    "role": "Original Developer"
+                },
+                {
+                    "name": "abcsun",
+                    "email": "chenglongsun_nj@163.com",
+                    "homepage": "http://github.com/abcsun",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Qiniu Resource (Cloud) Storage SDK for Laravel 5",
+            "keywords": [
+                "cloud",
+                "laravel",
+                "qiniu",
+                "sdk",
+                "storage"
+            ],
+            "time": "2017-07-12T14:34:41+00:00"
         }
     ],
     "packages-dev": [

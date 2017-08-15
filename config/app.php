@@ -176,6 +176,8 @@ return [
         Bican\Roles\RolesServiceProvider::class,
         Overtrue\LaravelEmoji\EmojiServiceProvider::class,
         ChristofferOK\LaravelEmojiOne\LaravelEmojiOneServiceProvider::class,
+        LaravelChen\Editormd\EditorMdProvider::class,
+        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
         /*
          * Application Service Providers...
          */

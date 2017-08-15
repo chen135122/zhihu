@@ -6,6 +6,7 @@
     <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
 </head>
 <body>
+{{--@emojione($content)--}}
 {!! $content !!}
 <script >hljs.initHighlightingOnLoad();</script>
 </body>

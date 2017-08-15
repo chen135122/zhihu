@@ -34,8 +34,10 @@ Route::middleware('auth:api')->post('/question/follower', function (Request $req
 Route::middleware('auth:api')->post('/question/follow', function (Request $request) {
     $user = Auth::guard('api')->user();
     $question = App\Question::find($request->get('question'));
+//    Auth::user()->notify(new \App\Notifications\News($question));
     $followed = $user->followThis($question->id);
     if(count($followed['detached']) > 0){
+        $user->notify(new \App\Notifications\Test());
         $question->decrement('follows_count');
         return response()->json(['followed'=>false]);
     }
@@ -51,3 +53,7 @@ Route::get('/androidShow',function (){
 });
 Route::post('/upload','AndroidController@upload');
 Route::get('/showQuestions','AndroidController@questions');
+Route::post('/comment','CommentsController@store');
+Route::post('/comments','CommentsController@show');
+Route::post('/second/comment','CommentsController@showSecondComment');
+Route::post('/test','CommentsController@showComment');

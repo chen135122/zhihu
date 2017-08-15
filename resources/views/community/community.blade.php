@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('header')
 @section('content')
     <div class="container-fluid" style="padding: 0">
             <div style="background:#393e46;height: 300px;width: 100%;padding:0;text-align: center;">
@@ -43,5 +43,4 @@
     <div style="text-align: center;margin-top:100px;">
         {{ $questions->links() }}
     </div>
-
 @stop

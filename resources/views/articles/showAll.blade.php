@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('header')
 @section('content')
     <div class="container">
         <div class="row clearfix">
@@ -7,12 +7,12 @@
                     <a href="{{ url('/article/'.$list->id) }}">
                     <div class="row clearfix list_hover" style="margin-top: 20px;padding-bottom: 30px;padding-top: 30px">
                         <div class="col-md-4 column">
-                            <img class="img-responsive" alt="140x140" src="{{ $list->cover_img }}" />
+                            <img width="300" class="img-responsive img-thumbnail" alt="140x140" src="{{ $list->cover_img }}" />
                         </div>
                         <div class="col-md-8 column">
                             <h3>
                                 {{ $list->title }}
-                            </h3> <span class="label label-default">{{ $list->author }}</span>
+                            </h3> <span class="label label-default" style="background-color: #58B7FF">{{ $list->articletype->name }}</span>
                             <p style="font-size: 20px">
                                 {{ $list->intro }}
                             </p>

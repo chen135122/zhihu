@@ -24,12 +24,12 @@ class UserFollowController extends Controller
     public function index($id)
     {
 //        dd($id);
-        $user =$this->user->byId($id);
-        $followers =$user->followersUser()->pluck('followed_id')->toArray();
-        if(in_array(Auth::guard('api')->user()->id,$followers)){
-            return response()->json(['followed'=>true]);
-        }
-        return response()->json(['followed'=>false]);
+//        $user =$this->user->byId($id);
+//        $followers =$user->followersUser()->pluck('followed_id')->toArray();
+//        if(in_array(Auth::guard('api')->user()->id,$followers)){
+//            return response()->json(['followed'=>true]);
+//        }
+        return response()->json(['followed'=>true]);
     }
     public function follow(){
         $userToFollow = $this->user->byId(request('user'));

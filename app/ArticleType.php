@@ -9,7 +9,7 @@ class ArticleType extends Model
     protected $fillable= [
       'name','intro','img'
     ];
-    public function Articles(){
-        return $this->hasMany(Article::class);
+    public function articles(){
+        return $this->hasMany(Article::class,'type');
     }
 }

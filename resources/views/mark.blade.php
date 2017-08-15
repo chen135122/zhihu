@@ -7,6 +7,8 @@
     <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
 </head>
 <body>
-@emojione($data)
+
+    {{ $data->articletype }}
+
 </body>
 </html>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Article;
+use App\ArticleType;
 use ChristofferOK\LaravelEmojiOne\LaravelEmojiOne;
 use ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade;
 use Illuminate\Http\Request;
@@ -17,7 +19,7 @@ class TestController extends Controller
     public function index()
     {
 
-        $data = LaravelEmojiOneFacade::toShort(':smiley:');
+        $data = Article::where('type',2)->first();
         return view('mark',compact('data'));
     }
 

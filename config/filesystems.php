@@ -62,12 +62,24 @@ return [
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
+//        'qiniu' => [
+//            'driver'     => 'qiniu',
+//            'access_key' => env('QINIU_ACCESS_KEY', 'xxxxxxxxxxxxxxxx'),
+//            'secret_key' => env('QINIU_SECRET_KEY', 'xxxxxxxxxxxxxxxx'),
+//            'bucket'     => env('QINIU_BUCKET', 'test'),
+//            'domain'     => env('QINIU_DOMAIN', 'xxx.clouddn.com'), // or host: https://xxxx.clouddn.com
+//        ],
         'qiniu' => [
-            'driver'     => 'qiniu',
-            'access_key' => env('QINIU_ACCESS_KEY', 'xxxxxxxxxxxxxxxx'),
-            'secret_key' => env('QINIU_SECRET_KEY', 'xxxxxxxxxxxxxxxx'),
-            'bucket'     => env('QINIU_BUCKET', 'test'),
-            'domain'     => env('QINIU_DOMAIN', 'xxx.clouddn.com'), // or host: https://xxxx.clouddn.com
+            'driver' => 'qiniu',
+            'domains' => [
+                'default' => env('QINIU_DOMAIN', 'xxx.clouddn.com'), //你的七牛域名
+                'https' => '',         //你的HTTPS域名
+                'custom' => env('QINIU_DOMAIN', 'xxx.clouddn.com'),                //你的自定义域名
+            ],
+            'access_key' => env('QINIU_ACCESS_KEY', 'xxxxxxxxxxxxxxxx'),  //AccessKey
+            'secret_key' => env('QINIU_SECRET_KEY', 'xxxxxxxxxxxxxxxx'),  //SecretKey
+            'bucket' => env('QINIU_BUCKET', 'test'),  //Bucket名字
+            'notify_url' => '',  //持久化处理回调地址
         ],
 
     ],

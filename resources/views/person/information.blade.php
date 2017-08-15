@@ -22,11 +22,11 @@
     <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
-
     <link rel="shortcut icon" href="{{ asset('img/pexels-photo-463684.ico') }}"/>
     <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mine.css') }}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" style="z-index:99">
