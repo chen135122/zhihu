@@ -18,8 +18,8 @@
 </head>
 <body>
 <div id="app" class="col-md-8 col-md-offset-2" style="margin-top: 50px">
-    <div id="app2">
-        <comment type="article" id="5" parent_id=""></comment>
+    <div id="app2" style="width:100%;">
+        <example></example>
     </div>
 </div>
     <script src="{{ asset('js/app.js') }}"></script>

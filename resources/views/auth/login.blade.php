@@ -37,20 +37,11 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="box col-md-6 col-md-offset-4" id="div_geetest_lib">
-                            {!! Geetest::render() !!}
-                        </div>
-
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> 记住密码
-                                    </label>
-                                </div>
+                            <div class="box col-md-6 col-md-offset-4" id="div_geetest_lib">
+                                {!! Geetest::render() !!}
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

@@ -15,7 +15,7 @@
                             {{comment.body}}
                         </div>
                     </div>
-                    <show-form v-if="own(comment)" :type="commentType" :user_id="userId" :commentable_id="thisId" :parent_id="comment.id" ></show-form>
+                    <show-form v-on:listenChild="showComment" v-if="own(comment)" :type="commentType" :user_id="userId" :commentable_id="thisId" :parent_id="comment.id" ></show-form>
                     <hr>
                 </div>
                 <!--<comment-second type="answer" :user_id="userId" :commentable_id="thisId" :parent_id="comment.id" :group_id="comment.id"></comment-second>-->
@@ -27,10 +27,12 @@
 <script>
     export default {
         props:['type','commentable_id','parent_id','login','user_id'],
+        data(){
+          return{
+              comments : []
+          }
+        },
         computed : {
-            comments(){
-                return this.$store.state.comments
-            },
             userId(){
                 return this.user_id
             },
@@ -42,11 +44,16 @@
             }
         },
         mounted(){
-            this.$store.dispatch('getComment',{'type':this.type,'commentable_id':this.commentable_id})
+            axios.post('/api/test',{'type':this.type,'commentable_id':this.commentable_id}).then(response=>{
+                this.comments = response.data.comments
+            })
         },
         methods:{
             own(data){
                 return this.user_id != data.user_id
+            },
+            showComment(data){
+                this.comments.push(data)
             }
         }
     }

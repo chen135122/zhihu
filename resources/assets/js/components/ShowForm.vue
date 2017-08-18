@@ -28,12 +28,18 @@
                 this.seen = ! this.seen
             },
             submit(){
-                this.$store.dispatch('submitOneComment',{'user_id':this.user_id,'type':this.type,'body':this.body,'commentable_id':this.commentable_id,'parent_id':this.parent_id})
+                axios.post('/api/comment',{'user_id':this.user_id,'type':this.type,'body':this.body,'commentable_id':this.commentable_id,'parent_id':this.parent_id,'group_id':this.group_id}).then(response=>{
+                    this.upToParent(response.data.comment)
+                });
+
                 this.body = ''
                 this.cancle()
             },
             cancle(){
                 this.seen = false
+            },
+            upToParent(data){
+                this.$emit('listenChild',data)
             }
         }
     }

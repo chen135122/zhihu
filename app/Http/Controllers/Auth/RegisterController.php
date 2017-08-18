@@ -69,7 +69,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'avatar' => '/images/avatars/a34.jpg',
+            'avatar' => 'http://orwi9xvus.bkt.clouddn.com/head_defalut.jpg',
             'confirmation_token' => str_random(40),
             'password' => bcrypt($data['password']),
             'api_token' => str_random(60),

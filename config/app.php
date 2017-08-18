@@ -183,7 +183,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -239,6 +239,7 @@ return [
         'Geetest' => Germey\Geetest\Geetest::class,
         'Emoji' => Overtrue\LaravelEmoji\Emoji::class,
         'LaravelEmojiOne' => ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade::class,
+        'Pusher' => Pusher\Pusher::class,
     ],
 
 ];

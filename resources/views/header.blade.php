@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/templatemo_misc.css') }}">
     <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}">
     <link rel="stylesheet" href="{{ asset('css/testimonails-slider.css') }}">
-    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
     <link href="{{ asset('css/mine.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="api-token" content="{{ Auth::check() ? 'Bearer '.Auth::user()->api_token : 'Bearer ' }}">
@@ -31,7 +31,7 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/vendor/modernizr-2.6.1-respond-1.1.0.min.js') }}"></script>
 
-    <link href="../css/markdown16.css" rel="stylesheet">
+    <link href="../css/my-markdown.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/share.min.css') }}">
 </head>
 <body>

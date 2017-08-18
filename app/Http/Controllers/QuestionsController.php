@@ -36,7 +36,7 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        return view('questions.make');
+        return view('community.create');
     }
 
     /**

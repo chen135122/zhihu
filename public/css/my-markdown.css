@@ -1,0 +1,21 @@
+.my_markdown blockquote{
+    border-left:5px solid #f78e21;
+    background-color: #effdf7;
+
+}
+.my_markdown blockquote > p{
+    font-size: 16px;
+}
+.my_markdown > p > img{
+    width: 300px;
+}
+.my_markdown li {
+    font-size: 18px;
+    color: #000;
+}
+.my_markdown code{
+    font-size: 16px;
+}
+textarea,input{
+    font-style: normal;
+}

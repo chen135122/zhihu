@@ -78,3 +78,15 @@ Route::get('/group',function (){
 //    return $data;
 });
 
+Route::get('/queue','TestController@queue');
+Route::get('/showRedis',function (){
+    Redis::set('name','chen');
+    return Redis::get('name');
+});
+Route::get('/cast',function(){
+//    $name = Redis::get('name');
+    event(new \App\Events\SendMessage('chen'));
+    return view('socket');
+});
+
+

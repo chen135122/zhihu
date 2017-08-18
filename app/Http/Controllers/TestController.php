@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\ArticleType;
+use App\Jobs\SendEmail;
 use ChristofferOK\LaravelEmojiOne\LaravelEmojiOne;
 use ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade;
 use Illuminate\Http\Request;
@@ -87,5 +88,10 @@ class TestController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function queue(){
+       $user = \Auth::loginUsingId(5);
+        $this->dispatch(new SendEmail($user));
     }
 }
