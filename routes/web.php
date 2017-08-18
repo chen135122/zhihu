@@ -85,8 +85,10 @@ Route::get('/showRedis',function (){
 });
 Route::get('/cast',function(){
 //    $name = Redis::get('name');
-    event(new \App\Events\SendMessage('chen'));
-    return view('socket');
+    Auth::loginUsingId(5);
+    $user = \App\User::find(9);
+    event(new \App\Events\SendMessage($user));
+    return view('socket',compact('user'));
 });
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -14,16 +15,15 @@ class SendMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-
-    public $name;
+    public $user;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct(User $user)
     {
-        $this->name = $name;
+        $this->user = $user;
     }
 
     /**
@@ -34,6 +34,6 @@ class SendMessage implements ShouldBroadcast
     public function broadcastOn()
     {
 //        return new PrivateChannel('test-channel');
-        return new Channel('test-channel');
+        return new Channel('channel.'.$this->user->id);
     }
 }
