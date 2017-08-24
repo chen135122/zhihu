@@ -15,15 +15,15 @@ class SendMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $user;
+    public $news;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct($news)
     {
-        $this->user = $user;
+        $this->news = $news;
     }
 
     /**
@@ -34,6 +34,6 @@ class SendMessage implements ShouldBroadcast
     public function broadcastOn()
     {
 //        return new PrivateChannel('test-channel');
-        return new Channel('channel.'.$this->user->id);
+        return new Channel('news');
     }
 }

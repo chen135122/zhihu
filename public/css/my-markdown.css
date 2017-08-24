@@ -7,7 +7,7 @@
     font-size: 16px;
 }
 .my_markdown > p > img{
-    width: 300px;
+    max-width: 300px;
 }
 .my_markdown li {
     font-size: 18px;

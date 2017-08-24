@@ -85,10 +85,21 @@ Route::get('/showRedis',function (){
 });
 Route::get('/cast',function(){
 //    $name = Redis::get('name');
-    Auth::loginUsingId(5);
-    $user = \App\User::find(9);
-    event(new \App\Events\SendMessage($user));
+//    Auth::loginUsingId(5);
+//    $user = \App\User::find(9);
+//    event(new \App\Events\SendMessage($user));
     return view('socket',compact('user'));
 });
 
+Route::get('/email',function(){
+    $path = app_path('Http/Controllers/Controller.php');
+    return $path;
+});
+
+Route::get('/live','LiveController@index');
+Route::get('/ip',function(){
+    $address = \Zhuzhichao\IpLocationZh\Ip::find(\Illuminate\Support\Facades\Request::getClientIp());
+    $place = $address[0].$address[1].$address[2].$address[3];
+    echo $place;
+});
 

@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Article;
-use App\ArticleType;
-use App\Jobs\SendEmail;
-use ChristofferOK\LaravelEmojiOne\LaravelEmojiOne;
-use ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade;
 use Illuminate\Http\Request;
+use Qiniu\Pili\Client;
+use Qiniu\Pili\Mac;
 
-class TestController extends Controller
+class LiveController extends Controller
 {
+    protected $client;
+
+    public function __construct()
+    {
+        $this->client = new Client(new Mac('1JgXNOyoQA2O-cQ7EId4I9nJpy6qSfP0dAfCLBMd','fqceCaHR7r4whj__JJSyuSeEuTr4FOkEk3v72MrW'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,13 +22,10 @@ class TestController extends Controller
      */
     public function index()
     {
-
-        $data = Article::where('type',2)->first();
-        return view('mark',compact('data'));
-    }
-
-    public function Ip(){
-        var_dump(\Illuminate\Support\Facades\Request::getClientIp());
+        $this->client->hub('live-poorworm');
+        $liveurl = \Qiniu\Pili\HDLPlayURL('pili-live-hdl.live.poorworm.cn', 'live-poorworm', 'live-stream');
+//        return $liveurl;
+        return view('test.index',compact('liveurl'));
     }
 
     /**
@@ -92,10 +92,5 @@ class TestController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function queue(){
-        $user = \Auth::loginUsingId(5);
-        $this->dispatch(new SendEmail($user));
     }
 }

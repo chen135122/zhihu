@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Comment;
+use App\Events\SendMessage;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -121,4 +122,8 @@ class CommentsController extends Controller
         );
     }
 
+    public function cast(Request $request){
+        event(new SendMessage($request->get('news')));
+//        return response()->json(['news'=>$request->get('news')]);
+    }
 }

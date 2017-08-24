@@ -120,10 +120,11 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+    'log_max_files' => 7,//日志保留的天数7天
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -240,6 +241,7 @@ return [
         'Emoji' => Overtrue\LaravelEmoji\Emoji::class,
         'LaravelEmojiOne' => ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade::class,
         'Pusher' => Pusher\Pusher::class,
+        'Ip'  => Zhuzhichao\IpLocationZh\Ip::class,
     ],
 
 ];

@@ -57,3 +57,4 @@ Route::post('/comment','CommentsController@store');
 Route::post('/comments','CommentsController@show');
 Route::post('/second/comment','CommentsController@showSecondComment');
 Route::post('/test','CommentsController@showComment');
+Route::post('/cast','CommentsController@cast');
