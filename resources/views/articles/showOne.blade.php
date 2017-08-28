@@ -38,7 +38,6 @@
         </div>
     </div>
     <script >hljs.initHighlightingOnLoad();</script>
-
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="http://apps.bdimg.com/libs/jquery/1.8.2/jquery.js"></script>
     <script src="{{ asset('js/jquery.share.min.js') }}"></script>

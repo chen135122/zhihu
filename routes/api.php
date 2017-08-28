@@ -58,3 +58,4 @@ Route::post('/comments','CommentsController@show');
 Route::post('/second/comment','CommentsController@showSecondComment');
 Route::post('/test','CommentsController@showComment');
 Route::post('/cast','CommentsController@cast');
+Route::get('/content','TestController@show');

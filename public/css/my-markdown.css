@@ -10,6 +10,7 @@
     max-width: 300px;
 }
 .my_markdown li {
+    list-style-type: disc;
     font-size: 18px;
     color: #000;
 }
@@ -18,4 +19,7 @@
 }
 textarea,input{
     font-style: normal;
+}
+.my_markdown pre{
+    padding:0;
 }

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/templatemo_misc.css') }}">
     <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}">
     <link rel="stylesheet" href="{{ asset('css/testimonails-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles/vs2015.css') }}">
     <link href="../css/index.css" rel="stylesheet">
     <link href="{{ asset('css/mine.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -24,8 +25,8 @@
     <script src="http://api.geetest.com/get.php"></script>
     {!! editor_css() !!}
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
-    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
-
+    {{--<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">--}}
+    dracula/foundation/hybrid/monokai-sublime/tomorrow-night-bright/vs2015
     <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
     <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>

@@ -6,12 +6,20 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\ArticleType;
 use App\Jobs\SendEmail;
+use App\Markdown\Markdown;
 use ChristofferOK\LaravelEmojiOne\LaravelEmojiOne;
 use ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
+    protected $markdown;
+
+    public function __construct(Markdown $markdown)
+    {
+        $this->markdown = $markdown;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -55,9 +63,15 @@ class TestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $article = Article::find(47);
+
+        $text = $article->body;
+
+        $body = $this->markdown->markdown($text);
+
+        return view('mark',compact('body'));
     }
 
     /**
