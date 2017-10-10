@@ -36,6 +36,17 @@ class TestController extends Controller
         var_dump(\Illuminate\Support\Facades\Request::getClientIp());
     }
 
+
+    public function articleType(){
+        $data = ArticleType::all();
+        $types = array();
+        foreach ($data as $list){
+            $type = $list->name;
+            array_push($types,$type);
+        }
+        return $types;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -14,7 +14,8 @@ class ArticleController extends Controller
         $this->middleware('auth')->except('showOne');
     }
     public function index(){
-        return view('articles.create');
+        $data = ArticleType::all();
+        return view('articles.create',compact('data'));
     }
     public function store(Request $request){
         $data = [
@@ -23,7 +24,7 @@ class ArticleController extends Controller
             'cover_img' => $request->get('cover_img'),
             'intro' => $request->get('introduce'),
             'body' => $request->get('content'),
-            'type' => $request->get('lable')
+            'type' => 3
         ];
         Article::create($data);
         $Parsedown = new \Parsedown();

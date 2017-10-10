@@ -30,6 +30,7 @@ Vue.component('comment-second', require('./components/CommentSecond.vue'));
 Vue.component('select-topic', require('./components/SelectTopic.vue'));
 Vue.component('show-form', require('./components/ShowForm.vue'));
 Vue.component('pusher-echo', require('./components/PusherEcho.vue'));
+Vue.component('select-type', require('./components/SelectType.vue'));
 // Vue.component('pusher', require('./components/Pusher.vue'));
 // Vue.component('show-form-second', require('./components/ShowFormSecond.vue'));
 

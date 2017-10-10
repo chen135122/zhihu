@@ -65,6 +65,9 @@ Route::get('/roles/add','RoleController@showAdd')->name('showAdd');
 Route::post('/roles/add','RoleController@store');
 
 Route::post('/comment','CommentsController@save');
+Route::post('/articleType',function(\Illuminate\Http\Request $request){
+    dd($request->get('types'));
+});
 
 Route::get('/notify',function(){
     $user = Auth::loginUsingId(5);
@@ -103,3 +106,18 @@ Route::get('/ip',function(){
     echo $place;
 });
 
+Route::get('/dashboard','DashboardController@index');
+Route::get('/dashboard/newstype','DashboardController@newsType')->name('/newstype');
+Route::get('/dashboard/alltype','DashboardController@allType');
+Route::post('/dashboard/addfirsttype','DashboardController@addFirstType');
+Route::post('/dashboard/modifyfirsttype','DashboardController@modifyFirstType');
+Route::get('/dashboard/newstype/{id}','DashboardController@newsTypeId')->where(['id'=>'[0-9]+'])->name('/newsTypeId');
+Route::get('/dashboard/deletetype/{id}','DashboardController@deleteTypeId')->where(['id'=>'[0-9]+'])->name('/deleteTypeId');
+Route::get('/dashboard/newslist','DashboardController@newsList')->name('/newslist');
+Route::post('/dashboard/addnews','DashboardController@addNews');
+Route::get('/deletenews/{id}','DashboardController@deleteNews')->where(['id'=>'[0-9]+']);
+Route::get('/modifynews/{id}','DashboardController@getNews')->where(['id'=>'[0-9]+']);
+Route::post('/dashboard/modifynews','DashboardController@modifyNews');
+Route::get('/dashboard/home','DashboardController@home');
+Route::get('/dashboard/type/{id}','DashboardController@typeId')->where(['id'=>'[0-9]+']);
+Route::get('/dashboard/news/{id}','DashboardController@newsId')->where(['id'=>'[0-9]+']);

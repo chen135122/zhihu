@@ -55,3 +55,12 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
         'type' => 3
     ];
 });
+$factory->define(App\News::class, function (Faker\Generator $faker) {
+    return [
+        'type_id' => $faker->numberBetween(1,9),
+        'topic' => $faker->name,
+        'sub_topic'=> $faker->sentence(),
+        'publish_date' => $faker->time('Y-m-d H:i:s'),
+        'content' => $faker->paragraph()
+    ];
+});

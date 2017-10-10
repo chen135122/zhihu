@@ -2,7 +2,6 @@
 @section('content')
     <div class="tpl-page-container tpl-page-header-fixed">
 
-
         <div class="tpl-left-nav tpl-left-nav-hover">
             <div class="tpl-left-nav-list">
                 <ul class="tpl-left-nav-menu">
@@ -50,7 +49,6 @@
                 </ul>
             </div>
         </div>
-
 
         <div class="tpl-content-wrapper" style="margin-top: -10px">
             <div class="tpl-portlet-components">

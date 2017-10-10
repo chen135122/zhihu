@@ -19,9 +19,21 @@
 <body>
 <div id="app" class="col-md-8 col-md-offset-2" style="margin-top: 50px">
     <div id="app2" style="width:100%;">
-        <example></example>
+        <form action="{{ url('/articleType') }}" method="post">
+            {{ csrf_field() }}
+            <select class="form-control" name="types" required>
+                <option></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button class="btn btn-default" type="submit">click</button>
+        </form>
+
     </div>
 </div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

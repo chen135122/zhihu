@@ -68,8 +68,15 @@
                                         <label for="exampleInputPassword1">简介<span style="color: red">*</span></label><input name="introduce" type="text" class="form-control" id="exampleInputPassword1" required/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">标签<span style="color: red">*</span></label><input name="lable" type="text" class="form-control" id="exampleInputPassword1" required/>
+                                        <label for="exampleInputPassword1">博文类别<span style="color: red">*</span></label>
+                                        <select class="form-control" name="type" required>
+                                            <option></option>
+                                            @foreach($data as $type)
+                                            <option>{{ $type->name }}</option>
+                                                @endforeach
+                                        </select>
                                     </div>
+                                    <label for="exampleInputPassword1">正文内容<span style="color: red">*</span></label>
                                     <div id="editormd_id">
                                         <textarea name="content" style="display:none;"></textarea>
                                     </div>

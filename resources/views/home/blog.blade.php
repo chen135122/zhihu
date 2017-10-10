@@ -1,5 +1,6 @@
 @extends('home.index')
 @section('content')
+    @if(count($data) > 0)
     <div id="latest-blog">
         <div class="container">
             <div class="row">
@@ -34,4 +35,5 @@
             </div>
         </div>
     </div>
+    @endif
 @stop
