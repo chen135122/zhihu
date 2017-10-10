@@ -52,7 +52,7 @@ class DashboardController extends Controller
             'name' => $name,
             'parent_id' => $parent_id
         ]);
-        return redirect()->route('/newstype');
+        return redirect()->back();
     }
 
     public function newsTypeId($id){

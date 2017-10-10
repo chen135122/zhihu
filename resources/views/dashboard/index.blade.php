@@ -297,7 +297,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a class="dropdown-collapse" href=""><i
+                    <a class="dropdown-collapse" ><i
                                 class="icon-edit"></i>
                         <span>分类管理</span>
                         <i class="icon-angle-down angle-down"></i>
@@ -314,14 +314,14 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="dropdown-collapse " href="">
+                    <a class="dropdown-collapse " >
                         <i class="icon-tint"></i>
                         <span>文章管理</span>
                         <i class="icon-angle-down angle-down"></i>
                     </a>
                     <ul class="nav nav-stacked">
                         <li class="">
-                            <a href="">
+                            <a href="{{ url('/dashboard/newslist') }}">
                                 <i class="icon-caret-right"></i>
                                 <span>新闻列表</span>
                             </a>

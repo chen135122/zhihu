@@ -314,7 +314,7 @@
                     </a>
                     <ul class="nav nav-stacked">
                         <li class="">
-                            <a href="">
+                            <a href="{{ url('/dashboard/newslist') }}">
                                 <i class="icon-caret-right"></i>
                                 <span>新闻列表</span>
                             </a>
